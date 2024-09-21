@@ -7,11 +7,19 @@
   <plugin name="control" filename="libgazebo_ros_control.so"/>
 </gazebo> -->
 
-<gazebo>
+<!--gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
         <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
         <parameters>$(find mainarm_description)/config/my_controllers.yaml</parameters>
     </plugin>
+</gazebo> -->
+<gazebo>
+    <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+    <parameters>$(find mainarm_description)/config/my_controllers.yaml</parameters>
+    <robot_param>robot_description</robot_param>
+
+    <robot_param_node>robot_state_publisher</robot_param_node>
+  </plugin>
 </gazebo>
 
 
