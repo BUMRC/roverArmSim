@@ -18,6 +18,6 @@ colcon build --symlink-install
 ### Running the simulation
 ```
 cd /src/launch
-ros2 launch roverArmSim gazebo.launch.py
+ros2 launch gazebo.launch.py
 ```
 
