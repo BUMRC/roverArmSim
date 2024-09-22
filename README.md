@@ -7,7 +7,7 @@ First, install ros2-humble by following the guide at: https://docs.ros.org/en/hu
 
 Additionally, install the following packages:
 ```
-sudo apt install ros-dev-tools '~nros-humble-rqt*' ignition-fortress ros-humble-xacro ros-humble-joint-state-publisher-gui ros-humble-gazebo-ros-pkgs ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-gazebo-ros2-control ros-humble-controller-manager ros-humble-joint-trajectory-controller ros-humble-joint-state-broadcaster ros-humble-joint-state-publisher-gui ros-humble-ros-gz
+sudo apt install ros-dev-tools '~nros-humble-rqt*' ignition-fortress ros-humble-xacro ros-humble-joint-state-publisher-gui ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-controller-manager ros-humble-joint-trajectory-controller ros-humble-joint-state-broadcaster ros-humble-joint-state-publisher-gui ros-humble-ros-gz
 ```
 
 Build the workspace:
