@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: mainarm_description
+    relative_path: urdf/MainArm.xacro
+  srdf:
+    relative_path: config/MainArm.srdf
+  package_settings:
+    author_name: todo
+    author_email: todo@todo.edu
+    generated_timestamp: 1727551921
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

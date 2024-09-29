@@ -39,22 +39,22 @@ def generate_launch_description():
     )
 
     # Use Ignition Gazebo with specified render engine
-    ign_gazebo = IncludeLaunchDescription(
+    gz_gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                FindPackageShare('ros_ign_gazebo'),
+                FindPackageShare('ros_gz_sim'),
                 'launch',
-                'ign_gazebo.launch.py'
+                'gz_sim.launch.py'
             ])
         ]),
         launch_arguments={
-            'ign_args': ['-r empty.sdf --render-engine ', LaunchConfiguration('render_engine')]
+            'gz_args': ['-r empty.sdf --render-engine ', LaunchConfiguration('render_engine')]
         }.items()
     )
 
     # Spawn the robot in Ignition Gazebo
     spawn_entity = Node(
-        package='ros_ign_gazebo',
+        package='ros_gz_sim',
         executable='create',
         arguments=[
             '-name', 'MainArm',
@@ -70,7 +70,7 @@ def generate_launch_description():
     )
 
     load_arm_controller = ExecuteProcess(
-        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'arm_controller'],
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'mainarm_controller'],
         output='screen'
     )
     
@@ -87,7 +87,7 @@ def generate_launch_description():
         render_engine_arg,
         robot_state_publisher_node,
         joint_state_publisher_node,
-        ign_gazebo,
+        gz_gazebo,
         spawn_entity,
         ign_ros2_control_node,
         TimerAction(

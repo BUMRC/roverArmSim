@@ -5,6 +5,7 @@
 <xacro:include filename="$(find mainarm_description)/urdf/MainArm.trans" />
 <xacro:include filename="$(find mainarm_description)/urdf/MainArm.gazebo" />
 <xacro:include filename="$(find mainarm_description)/urdf/ros2_control.xacro" />
+
 <link name="world"> <!-- World origin, unmovable -->
 </link>
 
